@@ -1,0 +1,91 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin horizontal-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 30px;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  @include flex-center;
+  flex-direction: column;
+  padding: 20px 0;
+  background-color: #f8f8f8;   // фон только для логотипа
+
+  .logo {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  .nav-bar {
+    width: 100%;
+    background-color: #f0f0f0;   // отдельная светлая полоска меню
+    padding: 15px 0;
+
+    ul {
+      @include horizontal-list;
+      justify-content: center;   // центрируем пункты меню
+    }
+
+    li a {
+      text-decoration: none;
+      color: #6a0dad;            // фиолетовый цвет как на картинке
+      font-size: 18px;
+      padding: 8px 12px;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #4a0a8c;
+      }
+    }
+  }
+}
+
+.characteristic {
+  @include flex-center;
+  padding: 40px 0;
+  background-color: #e9ecef;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.columns {
+  display: flex;
+  justify-content: space-around;
+  padding: 30px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 20px;
+
+  .column {
+    @include flex-center;
+    flex: 1;
+    background: #f8f8f8;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 25px;
+    border-radius: 8px;
+    min-height: 180px;
+    text-align: center;
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #f0f0f0;
+  color: #555;
+  font-size: 16px;
+}

@@ -1,0 +1,32 @@
+.number-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  li {
+    width: 60px;
+    height: 60px;
+    margin: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: bold;
+    border: 2px solid #333;
+    border-radius: 8px;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+}
+
+.loop(@i) when (@i > 0) {
+  .number-list li:nth-child(@{i}) {
+    background-color: rgb(@i, 256 - @i, 0);
+  }
+  .loop(@i - 1);
+}
+.loop(100);
