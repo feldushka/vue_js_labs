@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторная работа 5</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h1>Проверка сетевых запросов (Пункты 2-3)</h1>
+    <button onclick="makeRequest('https://vk.com')">vk.com</button>
+    <button onclick="makeRequest('https://json.geoiplookup.io/')">GeoIPLookup</button>
+
+    <script>
+        async function makeRequest(url) {
+            console.log('--- Отправка запроса на: ' + url + ' ---');
+            try {
+                const response = await axios.get(url);
+                console.log('Успех!', response.status);
+                console.log('Данные:', response.data);
+            } catch (error) {
+                console.error('Ошибка запроса!');
+                console.error('Сообщение:', error.message);
+                if (error.response) {
+                    console.log('Статус:', error.response.status);
+                } else {
+                    console.log('CORS');
+                }
+            }
+        }
+    </script>
+</body>
+</html>
