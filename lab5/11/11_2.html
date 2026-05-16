@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js Clicker - Задание 1 и 2</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; padding: 50px; }
+        .clicker-container { text-align: center; border: 1px solid #ccc; padding: 20px; border-radius: 8px; }
+        button { padding: 10px 20px; font-size: 16px; cursor: pointer; background-color: #42b883; color: white; border: none; border-radius: 4px; }
+        h1 { color: #35495e; }
+    </style>
+</head>
+<body>
+
+    <div id="app">
+        <div class="clicker-container">
+            <h1>Счетчик: {{ count }}</h1>
+            <button @click="increment">Нажми на меня</button>
+        </div>
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    count: 0
+                }
+            },
+            methods: {
+                increment() {
+                    this.count++;
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>
