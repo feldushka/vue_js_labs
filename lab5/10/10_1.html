@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PixiJS Rotation</title>
+    <script src="https://pixijs.download/release/pixi.js"></script>
+</head>
+<body>
+    <script>
+        const app = new PIXI.Application();
+        
+        async function init() {
+            await app.init({ width: 400, height: 400, backgroundColor: 0x1099bb });
+            document.body.appendChild(app.canvas);
+
+            const graphics = new PIXI.Graphics();
+            graphics.rect(-50, -50, 100, 100);
+            graphics.fill(0xDE3249);
+
+            graphics.x = 200;
+            graphics.y = 200;
+            app.stage.addChild(graphics);
+
+            app.ticker.add((time) => {
+                graphics.rotation += 0.05 * time.deltaTime;
+            });
+        }
+
+        init();
+    </script>
+</body>
+</html>
