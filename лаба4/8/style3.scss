@@ -21,7 +21,7 @@ header {
   @include flex-center;
   flex-direction: column;
   padding: 20px 0;
-  background-color: #f8f8f8;   // фон только для логотипа
+  background-color: #f8f8f8;
 
   .logo {
     font-size: 2.2rem;
@@ -32,17 +32,17 @@ header {
 
   .nav-bar {
     width: 100%;
-    background-color: #f0f0f0;   // отдельная светлая полоска меню
+    background-color: #f0f0f0;
     padding: 15px 0;
 
     ul {
       @include horizontal-list;
-      justify-content: center;   // центрируем пункты меню
+      justify-content: center;
     }
 
     li a {
       text-decoration: none;
-      color: #6a0dad;            // фиолетовый цвет как на картинке
+      color: #6a0dad;
       font-size: 18px;
       padding: 8px 12px;
       transition: color 0.3s;
